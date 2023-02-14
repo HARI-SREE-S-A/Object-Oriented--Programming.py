@@ -44,3 +44,12 @@ operator. For example, in the Snake example, you can access the attribute name o
 >>> # access the class attribute name inside the class Snake.
 >>> print(snake.name)
 python
+
+
+
+
+
+Methods
+Once there are attributes that “belong” to the class, you can define functions that will access the class attribute. These functions are called methods. When you define methods, you will need to always provide the first argument to the method with a self keyword.
+
+For example, you can define a class Snake, which has one attribute name and one method change_name. The method change name will take in an argument new_name along with the keyword self.
