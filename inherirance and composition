@@ -1,0 +1,85 @@
+Python classes and object object-oriented programming II
+Classes are written to organize and structure code into meaningful blocks, which can then be used to implement the business logic. These implementations are used in such a way that more complex parts are abstracted away to provide for simpler interfaces which can then be used to build even simpler blocks. While doing this we will find that there are lots of times when we will need to establish relationships between the classes that we build. These relationships can then be established using either inheritance or composition. At this point it is best you take a look at our [Python Classes tutorial][1] to get in-depth knowledge on how classes are written in Python. Also, in case you are already doing object oriented programming in some other language, you may want to check out our notes on design patterns.
+
+In this tutorial you will get to know how to build relationships between classes using inheritance and composition and the syntax that is needed.
+
+Python inheritance
+What is Inheritance
+In inheritance an object is based on another object. When inheritance is implemented, the methods and attributes that were defined in the base class will also be present in the inherited class. This is generally done to abstract away similar code in multiple classes. The abstracted code will reside in the base class and the previous classes will now inherit from the base class.
+
+How to achieve Inheritance in Python
+Python allows the classes to inherit commonly used attributes and methods from other classes through inheritance. We can define a base class in the following manner:
+
+class DerivedClassName(BaseClassName):
+    pass
+Let's look at an example of inheritance. In the following example, Rocket is the base class and MarsRover is the inherited class.
+
+class Rocket:
+    def __init__(self, name, distance):
+        self.name = name
+        self.distance = distance
+
+    def launch(self):
+        return "%s has reached %s" % (self.name, self.distance)
+
+
+class MarsRover(Rocket): # inheriting from the base class
+    def __init__(self, name, distance, maker):
+        Rocket.__init__(self, name, distance)
+        self.maker = maker
+
+    def get_maker(self):
+        return "%s Launched by %s" % (self.name, self.maker)
+
+
+if __name__ == "__main__":
+    x = Rocket("simple rocket", "till stratosphere")
+    y = MarsRover("mars_rover", "till Mars", "ISRO")
+    print(x.launch())
+    print(y.launch())
+    print(y.get_maker())
+The output of the code above is shown below:
+
+➜ Documents python rockets.py
+simple rocket has reached till stratosphere
+mars_rover has reached till Mars
+mars_rover Launched by ISRO
+Python Composition:
+What is composition
+In composition, we do not inherit from the base class but establish relationships between classes through the use of instance variables that are references to other objects. Talking in terms of pseudocode you may say that
+
+class GenericClass:
+    define some attributes and methods
+
+class ASpecificClass:
+    Instance_variable_of_generic_class = GenericClass
+
+# use this instance somewhere in the class
+    some_method(Instance_variable_of_generic_class)
+So you will instantiate the base class and then use the instance variable for any business logic.
+
+How to achieve composition in Python
+To achieve composition you can instantiate other objects in the class and then use those instances. For example in the below example we instantiate the Rocket class using self.rocket and then using self.rocket in the method get_maker.
+
+class MarsRoverComp():
+    def __init__(self, name, distance, maker):
+        self.rocket = Rocket(name, distance) # instantiating the base
+
+        self.maker = maker
+
+    def get_maker(self):
+        return "%s Launched by %s" % (self.rocket.name, self.maker)
+
+
+if __name__ == "__main__":
+    z = MarsRover("mars_rover2", "till Mars", "ISRO")
+    print(z.launch())
+    print(z.get_maker())
+The output of the total code which has both inheritance and composition is shown below:
+
+➜ Documents python rockets.py
+simple rocket has reached till stratosphere
+mars_rover has reached till Mars
+mars_rover Launched by ISRO
+mars_rover2 has reached till Mars
+mars_rover2 Launched by ISRO
