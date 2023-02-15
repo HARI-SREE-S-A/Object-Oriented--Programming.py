@@ -3,6 +3,7 @@ Classes are written to organize and structure code into meaningful blocks, which
 
 In this tutorial you will get to know how to build relationships between classes using inheritance and composition and the syntax that is needed.
 
+
 Python inheritance
 What is Inheritance
 In inheritance an object is based on another object. When inheritance is implemented, the methods and attributes that were defined in the base class will also be present in the inherited class. This is generally done to abstract away similar code in multiple classes. The abstracted code will reside in the base class and the previous classes will now inherit from the base class.
