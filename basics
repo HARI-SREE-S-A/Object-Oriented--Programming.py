@@ -27,7 +27,6 @@ Functionalities are defined by setting attributes, which act as containers for d
 Those functions are called methods.
 
 
-
 Attributes:
 You can define the following class with the name Snake. This class will have an attribute name.
 
