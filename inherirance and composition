@@ -68,6 +68,7 @@ class MarsRoverComp():
     def __init__(self, name, distance, maker):
         self.rocket = Rocket(name, distance) # instantiating the base
 
+
         self.maker = maker
 
     def get_maker(self):
