@@ -20,7 +20,7 @@ The simplest class can be created using the class keyword. For example, let's cr
 >>> print(snake)
 <__main__.Snake object at 0x7f315c573550>
 
-aa
+aaa
 
 Attributes and Methods in class:
 A class by itself is of no use unless there is some functionality associated with it.
