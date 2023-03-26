@@ -46,7 +46,6 @@ python
 
 
 
-
 Methods
 Once there are attributes that “belong” to the class, you can define functions that will access the class attribute. These functions are called methods. When you define methods, you will need to always provide the first argument to the method with a self keyword.
 
